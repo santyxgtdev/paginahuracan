@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Club Deportivo Huracán — Escuela de Fútbol en Bogotá</title>
+<meta name="description" content="Escuela de fútbol Club Deportivo Huracán en Bogotá D.C. Matrículas, mensualidades y uniformes oficiales del club.">
+<meta property="og:title" content="Club Deportivo Huracán">
+<meta property="og:description" content="Escuela de fútbol en Bogotá D.C. Matrículas, mensualidades y uniformes oficiales.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://clubdeportivohuracan.com/og-image.jpg">
+<link rel="canonical" href="https://clubdeportivohuracan.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a0c;
+    --surface:#131315;
+    --red:#e31623;
+    --red-dark:#a30f19;
+    --white:#f5f3ee;
+    --muted:#9a9aa1;
+    --line:#232326;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-padding-top:env(safe-area-inset-top,0px);}
+  body{
+    background:var(--bg);
+    color:var(--white);
+    font-family:'Work Sans',-apple-system,sans-serif;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block;}
+  section{padding:clamp(70px,10vw,130px) clamp(20px,6vw,90px);}
+  h1,h2{font-family:'Fraunces',serif; font-weight:600; letter-spacing:-.01em;}
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky; top:env(safe-area-inset-top,0px); z-index:50;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px clamp(20px,6vw,90px);
+    background:rgba(10,10,12,.85); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .brand{display:flex; align-items:center; gap:12px;}
+  .brand img{width:40px; height:40px;}
+  .brand span{font-weight:600; font-size:1.05rem; letter-spacing:.04em;}
+  nav{display:flex; align-items:center; gap:clamp(18px,3vw,40px);}
+  .nav-links{display:flex; gap:clamp(18px,3vw,40px);}
+  nav a{color:var(--muted); text-decoration:none; font-size:.95rem; transition:color .2s ease;}
+  nav a:hover{color:var(--white);}
+  .nav-cta{background:var(--red); color:var(--white) !important; padding:10px 22px; border-radius:2px; font-weight:600;}
+  .nav-cta:hover{background:var(--red-dark);}
+  @media (max-width:820px){.nav-links{display:none;}}
+
+  /* ---------- Hero ---------- */
+  .hero-media{
+    position:relative;
+    height:70vh; min-height:440px;
+    margin:0 clamp(20px,6vw,90px);
+    margin-top:clamp(30px,5vw,56px);
+    border-radius:4px;
+    overflow:hidden;
+    display:flex; align-items:flex-end;
+  }
+  .hero-media img{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+    filter:brightness(.55) saturate(1.05);
+  }
+  .hero-media::after{
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(0deg, rgba(10,10,12,.75) 0%, rgba(10,10,12,.15) 55%, transparent 100%);
+  }
+  .hero-tagline{
+    position:relative; z-index:2;
+    max-width:640px;
+    padding:clamp(24px,4vw,48px);
+    font-size:clamp(1.1rem,2vw,1.4rem);
+    line-height:1.5;
+    font-style:italic;
+    color:var(--white);
+  }
+  .hero-photo-note{
+    position:absolute; left:clamp(24px,4vw,48px); top:clamp(20px,3vw,32px);
+    font-size:.78rem; letter-spacing:.06em; color:var(--muted);
+  }
+
+  .hero-heading{
+    max-width:16ch; margin-top:clamp(40px,6vw,70px);
+    font-size:clamp(2.6rem,6.4vw,5.4rem); line-height:.98;
+  }
+  .hero-sub{
+    max-width:62ch; margin-top:24px; color:var(--muted);
+    font-size:clamp(1.05rem,1.6vw,1.25rem); line-height:1.65;
+  }
+  .hero-actions{display:flex; gap:16px; margin-top:38px; flex-wrap:wrap;}
+
+  .achievements{
+    display:flex; gap:20px; margin-top:56px; padding-top:32px;
+    border-top:1px solid var(--line); flex-wrap:wrap;
+  }
+  .ach-card{display:flex; align-items:center; gap:16px; max-width:340px;}
+  .ach-card img{
+    width:56px; height:56px; border-radius:50%; object-fit:cover; flex-shrink:0;
+    border:2px solid var(--red);
+  }
+  .ach-card b{display:block; font-size:.98rem; margin-bottom:4px;}
+  .ach-card span{color:var(--muted); font-size:.86rem; line-height:1.5;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:15px 28px; border-radius:2px; font-weight:600; font-size:.98rem;
+    text-decoration:none; transition:transform .2s ease, background .2s ease, border-color .2s ease;
+  }
+  .btn-primary{background:var(--red); color:var(--white);}
+  .btn-primary:hover{background:var(--red-dark); transform:translateY(-2px);}
+  .btn-ghost{border:1px solid var(--line); color:var(--white);}
+  .btn-ghost:hover{border-color:var(--white); transform:translateY(-2px);}
+
+  /* ---------- FAQ ---------- */
+  #faq{border-top:1px solid var(--line);}
+  .faq-head{max-width:640px; margin-bottom:56px;}
+  .faq-head h2{font-size:clamp(2.1rem,3.6vw,3rem);}
+  details{border-top:1px solid var(--line); padding:26px 0;}
+  details:last-child{border-bottom:1px solid var(--line);}
+  summary{
+    list-style:none; cursor:pointer;
+    display:flex; align-items:center; justify-content:space-between;
+    font-weight:600; font-size:1.08rem;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary::after{
+    content:'+'; font-family:'Fraunces',serif; font-size:1.6rem; color:var(--red);
+    transition:transform .2s ease; margin-left:20px;
+  }
+  details[open] summary::after{transform:rotate(45deg);}
+  details p{margin-top:16px; color:var(--muted); max-width:64ch; line-height:1.65;}
+
+  /* ---------- Contacto + Galería ---------- */
+  #contacto{border-top:1px solid var(--line);}
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;}
+  @media (max-width:860px){.contact-grid{grid-template-columns:1fr;}}
+  .contact-copy h2{font-size:clamp(2.1rem,3.6vw,3rem); max-width:12ch;}
+  .contact-copy p{color:var(--muted); margin-top:20px; max-width:48ch; line-height:1.65;}
+  .contact-copy .hero-actions{margin-top:32px;}
+
+  .gallery{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+  .gallery .ph-photo:first-child{grid-column:span 2;}
+  .ph-photo{
+    position:relative; aspect-ratio:4/3; border-radius:3px; overflow:hidden;
+  }
+  .ph-photo img{width:100%; height:100%; object-fit:cover;}
+
+  /* ---------- Footer ---------- */
+  footer{border-top:1px solid var(--line); padding:70px clamp(20px,6vw,90px) 40px;}
+  .footer-top{
+    display:flex; justify-content:space-between; align-items:flex-start; gap:40px; flex-wrap:wrap;
+    padding-bottom:50px; border-bottom:1px solid var(--line);
+  }
+  .footer-brand h3{font-family:'Fraunces',serif; font-size:1.6rem; font-weight:600;}
+  .footer-brand p{color:var(--muted); margin-top:10px; max-width:34ch; line-height:1.6;}
+  .socials{display:flex; gap:16px; margin-top:20px;}
+  .socials a{
+    width:38px; height:38px; border:1px solid var(--line); border-radius:50%;
+    display:flex; align-items:center; justify-content:center; color:var(--white); text-decoration:none;
+    font-size:.85rem; transition:border-color .2s ease, color .2s ease;
+  }
+  .socials a:hover{border-color:var(--red); color:var(--red);}
+
+  .newsletter{max-width:340px;}
+  .newsletter h4{font-weight:600; margin-bottom:14px;}
+  .newsletter form{display:flex; border-bottom:1px solid var(--line); padding-bottom:10px;}
+  .newsletter input{
+    flex:1; background:transparent; border:none; color:var(--white); font-size:.95rem; outline:none;
+  }
+  .newsletter input::placeholder{color:var(--muted);}
+  .newsletter button{
+    background:none; border:none; color:var(--red); font-weight:600; cursor:pointer; font-size:.9rem;
+  }
+
+  .footer-bottom{
+    display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap;
+    padding-top:26px; color:var(--muted); font-size:.85rem;
+  }
+  .footer-contact{display:flex; gap:28px; flex-wrap:wrap;}
+  .footer-contact div span{display:block; color:var(--muted); font-size:.75rem; margin-bottom:4px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <img src="images/escudo-huracan.png" alt="Escudo del Club Deportivo Huracán">
+    <span>HURACÁN</span>
+  </div>
+  <nav>
+    <div class="nav-links">
+      <a href="#nosotros">Nosotros</a>
+      <a href="#faq">Preguntas Frecuentes</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <a href="#matricula" class="nav-cta">Matricúlate</a>
+  </nav>
+</header>
+
+<main>
+
+  <section id="nosotros" style="padding-bottom:0;">
+    <div class="hero-media">
+      <img src="images/hero-equipo.jpg" alt="Jugadores del Club Deportivo Huracán posando en la cancha tras un partido">
+      <p class="hero-tagline">"Disciplina, pasión y comunidad — todo lo que tu hijo necesita para crecer dentro y fuera de la cancha está aquí."</p>
+    </div>
+
+    <h1 class="hero-heading">Formamos campeones</h1>
+    <p class="hero-sub">Desde las categorías menores hasta la competitiva, en Huracán entrenamos técnica, disciplina y trabajo en equipo. Cada jugador recibe su uniforme oficial y el acompañamiento de un cuerpo técnico que cree en la formación integral, dentro y fuera de la cancha.</p>
+
+    <div class="hero-actions">
+      <a href="#matricula" class="btn btn-primary">Matricúlate ahora</a>
+      <a href="#contacto" class="btn btn-ghost">Ver uniformes</a>
+    </div>
+
+    <div class="achievements">
+      <div class="ach-card">
+        <img src="images/bernabeu.jpg" alt="Delegación del Club Deportivo Huracán en el estadio Santiago Bernabéu">
+        <div>
+          <b>Giras internacionales</b>
+          <span>Nuestros jugadores han representado al club en escenarios como el Santiago Bernabéu.</span>
+        </div>
+      </div>
+      <div class="ach-card">
+        <img src="images/presentacion.jpg" alt="Equipo de Huracán en formación antes de un partido oficial">
+        <div>
+          <b>Competencia constante</b>
+          <span>Presencia activa en torneos y partidos oficiales durante toda la temporada.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="faq-head">
+      <h2>Tus preguntas, respondidas</h2>
+    </div>
+
+    <details open>
+      <summary>¿Cómo matriculo a mi hijo o hija?</summary>
+      <p>Escríbenos por WhatsApp o completa el formulario de contacto con la edad del jugador. Te confirmamos categoría, horarios y cupo disponible en menos de 24 horas.</p>
+    </details>
+    <details>
+      <summary>¿Qué incluye el uniforme oficial?</summary>
+      <p>Camiseta, pantaloneta y medias con el escudo del club. Se pide por talla y se entrega en las instalaciones o se coordina el envío.</p>
+    </details>
+    <details>
+      <summary>¿Hay descuento por hermanos o pago anual?</summary>
+      <p>Sí. Las familias con más de un jugador matriculado y los pagos adelantados por varios meses tienen tarifas preferenciales. Pregunta por las condiciones vigentes.</p>
+    </details>
+
+  </section>
+
+  <section id="contacto">
+    <div class="contact-grid">
+      <div class="contact-copy">
+        <h2>Hablemos de tu próxima temporada</h2>
+        <p>Si estás listo para matricular a tu hijo o hija, o solo quieres conocer más sobre las categorías, horarios y uniformes, nuestro equipo te responde rápido.</p>
+        <div class="hero-actions">
+          <a href="#matricula" class="btn btn-primary">Escríbenos</a>
+        </div>
+      </div>
+
+      <div class="gallery">
+        <div class="ph-photo">
+          <img src="images/equipo-formal.jpg" alt="Equipo del Club Deportivo Huracán posando completo en la cancha">
+        </div>
+        <div class="ph-photo">
+          <img src="images/huddle.jpg" alt="Jugadores de Huracán en círculo antes de salir a la cancha">
+        </div>
+        <div class="ph-photo">
+          <img src="images/comunidad.jpg" alt="Familias y jugadores del club reunidos en un día comunitario">
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <h3>Club Deportivo Huracán</h3>
+      <p>Formamos jugadores, formamos personas. Bogotá D.C.</p>
+      <div class="socials">
+        <a href="#" aria-label="Instagram del club">IG</a>
+        <a href="#" aria-label="Facebook del club">FB</a>
+        <a href="#" aria-label="WhatsApp del club">WA</a>
+      </div>
+    </div>
+
+    <div class="newsletter">
+      <h4>Recibe noticias del club</h4>
+      <form onsubmit="return false;">
+        <input type="email" placeholder="Tu correo electrónico" required>
+        <button type="submit">Suscribirme</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-contact">
+      <div><span>Correo</span>contacto@clubdeportivohuracan.com</div>
+      <div><span>Teléfono / WhatsApp</span>(+57) 300 000 0000</div>
+    </div>
+    <div>© 2026 Club Deportivo Huracán</div>
+  </div>
+</footer>
+
+</body>
+</html>
