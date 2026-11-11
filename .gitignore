@@ -1,6 +1,42 @@
-node_modules/
+
+.claude/
+
+# Notas internas 
+auditoria.md
+ficha-google.md
+
+# Secretos y credenciales 
 .env
-config.local.php
-backups/
-database/exports/
+.env.*
+api/config.php
+api/.env
+**/config.local.php
+
+# Base de datos
+database/*.sql
+database/backups/
+*.sql.gz
+*.dump
+!database/schema.sql
+
+# Subidas de usuarios y logs
+api/uploads/
+uploads/
+*.log
+logs/
+
+# Sourcemaps 
+*.map
+
+# Dependencias y builds, por si luego usas npm
+node_modules/
+dist/
+
+# Basura del sistema y editores
 Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/
+*.bak
+*.tmp

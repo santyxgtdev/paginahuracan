@@ -1,0 +1,56 @@
+# =========================================================
+# .htaccess — Club Deportivo Huracán (Hostinger)
+# HTTPS obligatorio + cabeceras de seguridad + caché + 404
+# =========================================================
+
+# --- Forzar HTTPS (Hostinger) ---
+RewriteEngine On
+RewriteBase /
+
+# 1) Si ServerName/local coming as http (variable estándar)
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://clubdeportivohuracan.com/$1 [R=301,L]
+
+# 2) Detrás de un proxy/CDN que sí pasa la cabecera (no redirigir si el origen ya es HTTPS):
+RewriteCond %{HTTP:X-Forwarded-Proto} =http [OR]
+RewriteCond %{SERVER_PORT} 80
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://clubdeportivohuracan.com/$1 [R=301,L]
+
+# --- Forzar el dominio canónico (sin www). Quítalo si usas www ---
+RewriteCond %{HTTP_HOST} ^www\.
+RewriteRule ^(.*)$ https://clubdeportivohuracan.com/$1 [R=301,L]
+
+# --- Página 404 propia ---
+ErrorDocument 404 /404.html
+
+# --- Seguridad ---
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options nosniff
+  Header set X-Frame-Options SAMEORIGIN
+  Header set Referrer-Policy strict-origin-when-cross-origin
+  Header set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  # Sube a "strict" con includeSubDomains cuando confirmes que todo el sitio corre bajo HTTPS:
+  # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+
+# --- Compresión ---
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/javascript application/json image/svg+xml
+</IfModule>
+
+# --- Caché de assets ---
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/avif "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType text/html "access plus 1 day"
+</IfModule>
+
+# --- Prohibir listar carpetas ---
+Options -Indexes
